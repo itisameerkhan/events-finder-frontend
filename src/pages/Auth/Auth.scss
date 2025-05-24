@@ -1,14 +1,11 @@
 $primary-blue-1: #006AD5;
 
-.auth-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
 .auth {
-    border: .6px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: .6px solid gray;
     padding: 2rem 2rem;
     background-color: #505050;
     border-radius: 10px;
@@ -27,27 +24,30 @@ $primary-blue-1: #006AD5;
     label {
         font-size: 1.2rem;
     }
+
     input {
         height: 2rem;
-        border:none;
+        border: none;
         outline: none;
         font-size: 1.2rem;
         padding-left: .75rem;
         border-radius: 0.2rem;
     }
 }
+
 .auth-content {
     display: flex;
     flex-direction: column;
     gap: .7rem;
 }
+
 .auth-btn {
     height: 2rem;
     font-size: 1rem;
     font-weight: 500;
     background-color: $primary-blue-1;
-    border:none;
-    color:white;
+    border: none;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
     transition: 100ms ease-in-out;
@@ -57,9 +57,27 @@ $primary-blue-1: #006AD5;
         transform: scale(0.99);
     }
 }
+
 .a-user {
-    color:skyblue;
+    color: skyblue;
     text-decoration: underline;
     cursor: pointer;
     margin: .5rem 0;
+}
+.loader-2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(2px);
+}
+.loader-2-main {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

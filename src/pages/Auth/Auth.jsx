@@ -3,6 +3,7 @@ import "./Auth.scss";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Loader2 from "../../components/Loader2/Loader2";
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -15,6 +16,8 @@ const Auth = () => {
     phoneNumber: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const notify = (message) => toast(message);
 
   const handleChange = (e) => {
@@ -25,6 +28,7 @@ const Auth = () => {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     if (auth === "signup") {
       if (
         !user.name ||
@@ -34,12 +38,14 @@ const Auth = () => {
         !user.email
       ) {
         notify("All fields required");
+        setIsLoading(false);
         return;
       }
     }
     if (auth === "login") {
       if (!user.email || !user.password) {
         notify("All fields required");
+        setIsLoading(false);
         return;
       }
     }
@@ -53,10 +59,12 @@ const Auth = () => {
 
         if (!response.data.success) {
           notify(response.data.message);
+          setIsLoading(false);
           return;
         }
 
         navigate("/home");
+        setIsLoading(false);
       } else if (auth === "login") {
         const response = await axios.post(
           import.meta.env.VITE_HOST_URL + "/user/login",
@@ -66,13 +74,13 @@ const Auth = () => {
           },
           { withCredentials: true }
         );
-
         if (!response.data.success) {
           notify(response.data.message);
+          setIsLoading(false);
           return;
         }
-
         navigate("/home");
+        setIsLoading(false);
       }
     } catch (e) {
       console.log(e);
@@ -81,6 +89,7 @@ const Auth = () => {
 
   return (
     <div className="auth-main">
+      {isLoading && <Loader2 />}
       <div className="auth">
         <h2>{auth === "signup" ? "Sign up" : "Login"}</h2>
         <div className="auth-content">

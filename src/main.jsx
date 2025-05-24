@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Auth from "./pages/Auth/Auth.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Error from "./pages/Error/Error.jsx";
+import Application from "./pages/Application/Application.jsx";
+import Events from "./pages/Events/Events.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/application",
+        element: <Application />,
+      },
+      {
+        path: "/add-events",
+        element: <Events />,
       },
     ],
   },

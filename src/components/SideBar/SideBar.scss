@@ -1,10 +1,95 @@
+$primary-blue-1: #006AD5;
+
 .sidebar {
     position: relative;
 }
+
 .sidebar-main {
-    border:2px solid white;
+    background-color: #404040;
     height: 100vh;
     width: 15rem;
     position: fixed;
     left: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sidebar-m-1 {
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    height: 5%;
+
+    p {
+        font-family: "Jaro";
+        font-size: 1.7rem;
+        color: $primary-blue-1;
+    }
+
+    i {
+        font-size: 2rem;
+        color: $primary-blue-1;
+    }
+}
+
+.sidebar-m-3 {
+    padding: 1rem;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    a {
+        display: flex;
+        gap: 1rem;
+        cursor: pointer;
+        padding: 1rem;
+        background-color: #505050;
+        border-radius: 10px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+
+        &:hover {
+            background-color: $primary-blue-1;
+        }
+
+    }
+
+    .active {
+        background-color: #006AD5;
+    }
+}
+
+.sidebar-m-4 {
+    cursor: pointer;
+    height: 5%;
+    padding: 1rem;
+
+    .sidebar-m-4-m {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        background-color: #505050;
+
+        &:hover {
+            background-color: #606060;
+        }
+    }
+}
+
+.sidebar-m-2 {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    p {
+        text-align: center;
+    }
 }

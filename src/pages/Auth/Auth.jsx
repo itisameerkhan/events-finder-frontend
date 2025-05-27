@@ -4,9 +4,12 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Loader2 from "../../components/Loader2/Loader2";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../config/userSlice";
 
 const Auth = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [auth, setAuth] = useState("signup");
   const [user, setUser] = useState({
     name: "",
@@ -62,6 +65,8 @@ const Auth = () => {
           setIsLoading(false);
           return;
         }
+        
+        dispatch(addUser(response.data.data))
 
         navigate("/home");
         setIsLoading(false);
@@ -79,6 +84,7 @@ const Auth = () => {
           setIsLoading(false);
           return;
         }
+        dispatch(addUser(response.data.data))
         navigate("/home");
         setIsLoading(false);
       }

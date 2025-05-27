@@ -1,0 +1,56 @@
+$primary-blue-1: #006AD5;
+
+.event-card {
+    border:2px solid white;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $primary-blue-1;
+    }
+}
+
+.ec-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .ec-top-left {
+        img {
+            height: 5rem;
+            width: 5rem;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 5px;
+            border:1px solid white;
+        }
+    }
+    .ec-top-right {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: rgb(180, 180, 180);
+        }
+
+    }
+}
+.ec-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:.5rem 6rem;
+
+    div {
+        p {
+            font-size: 1.2rem;
+            color:rgb(185, 184, 184);
+        }
+    }
+}

@@ -1,22 +1,28 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./SideBar.scss";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser } from "../../config/userSlice";
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const user = useSelector((store) => store.user);
+  const dispatch = useDispatch();
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(
+      await axios.get(
         import.meta.env.VITE_HOST_URL + "/user/logout",
         { withCredentials: true }
       );
 
+      dispatch(removeUser());
       navigate("/authentication");
     } catch (e) {
       console.log(e);
     }
   };
+
   return (
     <div className="sidebar">
       <div className="sidebar-main">
@@ -25,7 +31,7 @@ const SideBar = () => {
           <p>Events Finder</p>
         </div>
         <div className="sidebar-m-2">
-          <p>hello, Ameer khan</p>
+          <p>hello, {user?.name}</p>
         </div>
         <div className="sidebar-m-3">
           <NavLink className="s-m-2-d" to={"/home"}>

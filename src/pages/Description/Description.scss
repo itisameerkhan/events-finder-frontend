@@ -1,0 +1,116 @@
+$primary-blue-1: #006AD5;
+
+.description {
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.desc-1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+        height: 7rem;
+        width: 7rem;
+        border-radius: 5px;
+    }
+
+    .desc-1-1 {
+        width: 75%;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: rgb(182, 182, 182);
+        }
+    }
+
+    button {
+        padding: .5rem 1.2rem;
+        border: none;
+        background-color: $primary-blue-1;
+        border-radius: 5px;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 100ms ease-in-out;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+        &:hover {
+            background-color: #0255a8;
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}
+
+.description-main {
+    background-color: #505050;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.desc-2 {
+    display: flex;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .desc-2-1 {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: 1.2rem;
+            color: rgb(180, 179, 179);
+        }
+    }
+}
+.desc-3 {
+    margin-top: 1rem;
+    padding: 0rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+
+    p {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: 1.2rem;
+        color: rgb(174, 173, 173);
+    }
+}
+.desc-4 {
+    margin-top: .5rem;
+    padding: 1rem 2rem;
+    border-top: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color:rgb(167, 165, 165);
+    }
+}
+.desc-5 {
+    margin-top: 1rem;
+}

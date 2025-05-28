@@ -48,7 +48,13 @@ $primary-blue-1: #006AD5;
     padding:.5rem 6rem;
 
     div {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
         p {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
             font-size: 1.2rem;
             color:rgb(185, 184, 184);
         }
